@@ -22,7 +22,7 @@ import SettingsTab from './SettingsTab';
 import { useRouter } from 'next/navigation';
 import { signOut } from '@/lib/auth-client'; 
 
-export default function AdminDashboard() {
+export default function Profile() {
     const router = useRouter();
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [activeTab, setActiveTab] = useState('projects');

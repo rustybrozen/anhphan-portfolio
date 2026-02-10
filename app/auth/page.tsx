@@ -73,7 +73,7 @@ function LoginForm() {
       <form onSubmit={handleLogin} className="p-8 space-y-5">
         <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 flex items-center gap-2"><Mail size={12} /> Email</label>
-            <input required type="email" placeholder="admin@alex.dev" className="w-full bg-transparent border border-neutral-200 dark:border-neutral-800 p-3 text-sm outline-none" 
+            <input required type="email" placeholder="example@mail.dev" className="w-full bg-transparent border border-neutral-200 dark:border-neutral-800 p-3 text-sm outline-none" 
              value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
         </div>
         <div className="space-y-2">
@@ -92,7 +92,7 @@ function LoginForm() {
 
 function SetupForm({ onSuccess }: { onSuccess: () => void }) {
   const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({ email: '', password: '', name: 'Admin' });
+  const [formData, setFormData] = useState({ email: '', password: '', name: 'Your Name' });
 
   const handleSetup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -126,7 +126,7 @@ function SetupForm({ onSuccess }: { onSuccess: () => void }) {
         </div>
         <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-wider text-neutral-500">Email</label>
-            <input required type="email" placeholder="admin@alex.dev" className="w-full bg-transparent border border-neutral-200 dark:border-neutral-800 p-3 text-sm outline-none" 
+            <input required type="email" placeholder="example@mail.dev" className="w-full bg-transparent border border-neutral-200 dark:border-neutral-800 p-3 text-sm outline-none" 
              value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
         </div>
         <div className="space-y-2">
