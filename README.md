@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AnhPan Portfolio
 
-## Getting Started
+A full-stack, dynamic personal portfolio website.
+This project features a secure, single-tenant Admin Dashboard that allows for complete content management (Profile, Projects, Experience, Statistics) without needing to redeploy the codebase.
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Public Facing
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Server-Side Rendering (SSR):** Optimized for SEO and performance.
+- **Dynamic Metadata:** SEO tags are generated dynamically based on the user profile data.
+- **Responsive Design:** Mobile-first approach using Tailwind CSS.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Admin Dashboard
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Single Tenant Security:** Restricted to a single admin user.
+- **Profile Management:** Update bio, avatar, job title, and social links.
+- **Statistics Control:** Modify key metrics (Years of Experience, Project count) dynamically.
+- **Project Management:** CRUD operations for projects with tech stack tags.
+- **Experience Timeline:** Manage work history with drag-and-drop reordering.
