@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified Boolean
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  jobTitle      String?
+  bio           String?   
+  techStack String?
+stats         String?
+
+  devNickname   String?   
+  contactEmail  String?   
+  phoneNumber   String?
+  address       String?
+  isOpenForWork Boolean   @default(true) 
+  socials       String?
+  
+  sessions      Session[]
+  accounts      Account[]
+  @@map("user")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String @unique
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id           String    @id @default(cuid())
+  userId       String
+  accountId    String
+  providerId   String
+  accessToken  String?
+  refreshToken String?
+  expiresAt    DateTime?
+  password     String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+
+
+model Project {
+  id            String   @id @default(cuid())
+  title         String   
+ 
+  description   String
+
+  image         String?
+  techStack     String   
+  featured      Boolean  @default(false)
+  link          String?
+  github        String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+model Experience {
+  id            String   @id @default(cuid())
+  company       String
+  title         String
+
+  
+
+  startDate     DateTime 
+  endDate       DateTime? 
+  order         Int      @default(0) 
+
+
+  description   String
+
+  current       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@map("experience")
+}
