@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { signIn, signUp, useSession } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { Loader2, ArrowRight, Mail, Lock, ShieldCheck } from 'lucide-react';
-import AuthDebugger from '@/components/AuthDebugger';
+
 
 export default function AuthPage() {
   const [status, setStatus] = useState<'loading' | 'login' | 'setup'>('loading');
@@ -40,14 +40,7 @@ export default function AuthPage() {
     );
   }
 
-return (
-    <div className="relative min-h-screen">
-      {status === 'login' ? <LoginForm /> : <SetupForm onSuccess={() => setStatus('login')} />}
-      
-      {/* Thêm cục này vào để soi lỗi */}
-      <AuthDebugger /> 
-    </div>
-  );
+  return status === 'login' ? <LoginForm /> : <SetupForm onSuccess={() => setStatus('login')} />;
 }
 
 
