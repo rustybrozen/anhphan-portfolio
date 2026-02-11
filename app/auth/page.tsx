@@ -67,9 +67,7 @@ function LoginForm() {
   return (
     <>
       <div className="p-8 border-b border-neutral-200 dark:border-neutral-800 text-center">
-        <div className="mx-auto size-10 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center mb-3">
-            <ShieldCheck size={20}/>
-        </div>
+    
       </div>
       <form onSubmit={handleLogin} className="p-8 space-y-5">
         <div className="space-y-2">
